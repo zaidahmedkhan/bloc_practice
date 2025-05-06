@@ -1,7 +1,9 @@
 import 'package:bloc_practice/bloc/counter/counter_bloc.dart';
 import 'package:bloc_practice/bloc/image_picker/image_picker_bloc.dart';
+import 'package:bloc_practice/bloc/posts/post_bloc.dart';
 import 'package:bloc_practice/bloc/switch/switch_bloc.dart';
 import 'package:bloc_practice/ui/image_picker_screen.dart';
+import 'package:bloc_practice/ui/post_screen.dart';
 import 'package:bloc_practice/ui/switch_screen.dart';
 import 'package:bloc_practice/utils/image_picker_utils.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +23,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => CounterBloc()),
         BlocProvider(create: (_) => SwitchBloc()),
         BlocProvider(create: (_) => ImagePickerBloc(ImagePickerUtils())),
+        BlocProvider(create: (_) => PostBloc()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -30,7 +33,8 @@ class MyApp extends StatelessWidget {
         ),
         // home: const CounterScreen(),
         // home: const SwitchScreen(),
-        home: const ImagePickerScreen(),
+        // home: const ImagePickerScreen(),
+        home: const PostScreen(),
       ),
     );
   }
